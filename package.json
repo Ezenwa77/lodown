@@ -1,6 +1,6 @@
 {
   "name": "lodown-ezenwa",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "my first npm library",
   "main": "index.js",
   "directories": {
