@@ -45,8 +45,8 @@ module.exports.typeOf = typeOf;
  * array.
 * @param {array}array: The input array from which a selection of the first 
 * number is made.
-* @param {number}number: The parameter indicating that the first number 
-* is to be selected from the given array  .
+* @param {number}number: The argument indicating the number of elements to be 
+* selected from the given array, starting from the beginning of the array.
 * @return {array}array: The array of elements from index zero to the specified 
 * index.
 * 
@@ -69,8 +69,8 @@ module.exports.first = first;
  * selected numbers of the array.
 * @param {array}array: The input array from which the last 
 * number of the selected section is to be made.
-* @param {number}number: The parameter indicating the last index of selection. 
-* to be be selected from a section of the given array.
+* @param {number}number:The argument indicating the number of elements to be 
+* selected from the given array, starting from the end of the array.
 * @return {array}array: The array of numbers in the selected section of the 
 * given array.
 * 
