@@ -5,7 +5,6 @@
 
 /**
  * identity: Function applied on a value, and returns the given value unchanged. 
- * Could take any value, say x, and returns same.
  * @param {any data type}x: Value being identified by its value
  * @return {same type as input}x: This is the returned value, and has the same type and value 
  * as the input value. Value identified and returned by the identity function is
@@ -20,16 +19,9 @@
      module.exports.identity = identity;
 
 
-/**  typeOf: This is designed to find the data type of a value. 
- * Arguments: It could take strings, object(not array, not a null, not date), 
- * undefined, boolean, number, function as arguments like so: 'house', 
- * {name: 'John'}, undefined, true, 234, and function changeLetter(){}, and would 
- * return the value type in string form like so: 'string', 'object', 'undefined',
- * 'boolean', 'number', and 'function'.
- * @param {string, object, undefined, boolean, number, or function}value: 
- * the input data to find there types.
- * @return {'string','object', 'undefined', 'boolean', 'number', or 
- * 'function'}value: 
+/**  typeOf: This function finds the data type of a value. 
+ * @param {any value}value: the input data to find their types.
+ * @return {'string'}value: 
  * The type of data of the input data returned in quotes(as a string).
  * 
  * Usage:
@@ -49,14 +41,14 @@ function typeOf(value){
 module.exports.typeOf = typeOf;
 
 
-/** first: This function is designed to select the first element of the 
- * selected elements.
+/** first: This function selects the first number of the selected section of the
+ * array.
 * @param {array}array: The input array from which a selection of the first 
-* number-element is made.
-* @param {number}number: The parameter indicating that the first number-element 
+* number is made.
+* @param {number}number: The parameter indicating that the first number 
 * is to be selected from the given array  .
-* @return {number}: The first number-element of the array, returned by the 
-* function if present.
+* @return {array}array: The array of elements from index zero to the specified 
+* index.
 * 
 * usage:
 */
@@ -73,14 +65,14 @@ function first(array, number){
 }
 module.exports.first = first;
 
-/** last: This function is designed to select the last element of the 
- * selected elements.
-* @param {array}array: The input array from which a selection of the last 
-* number-element is to be made.
-* @param {number}number: The parameter indicating that the last number-element is
-* to be be selected from the given array.
-* @return {number}number: The number-element of the array, returned by the 
-* function, if present.
+/** last: This function is designed to select the last number of the 
+ * selected numbers of the array.
+* @param {array}array: The input array from which the last 
+* number of the selected section is to be made.
+* @param {number}number: The parameter indicating the last index of selection. 
+* to be be selected from a section of the given array.
+* @return {array}array: The array of numbers in the selected section of the 
+* given array.
 * 
 * usage:
 */
@@ -100,9 +92,9 @@ function last(array, number){
    module.exports.last = last;
    
 
-/** indexOf: This searches searches string or array, and returns the 
+/** indexOf: This function searches string or array, and returns the 
  * position/index of the first occurrence of a specified element in a 
- * string/array. The method returns -1 if the value being serched never
+ * array. The method returns -1 if the value being serched never
  * occurs. This method is case sensitive - sees uppercase and lowercase of a 
  * letter of the alphabets as different.
  * @param {array}array: The array in which to conduct the search 
@@ -259,18 +251,17 @@ return results;
 module.exports.reject = reject;
 
 
-/** partition: This function takes an array and an anonymous(callback) function, 
- * and returns two new arrays. The first of the new arrays contains the elements
- * that satisfy the callback condion, and the second contains the elements that 
- * do not satisfy the condition of the callback function. So, this method 
- * practically does filter and reject in one piece.
+/** partition: This function takes an array and a callback function, 
+ * and returns an array containing two  sub-arrays. So, this method practically 
+ * does filter and reject in one piece.
  * @param {Array}collection: The array to be partitioned
  * @param {function}test: This is the callback function which applies some logic, 
  * and returns a boolean based on if the condition of the logic is met by an 
  * element.
- * @return {Arrays}result1: This function returns two arrays - One is an array 
- * of elements that filtered through or passed the test, and the other is an array of 
- * elements that are rejected or did not pass the test. 
+ * @return {Arrays}result1: This function returns an array containing two 
+ * sub-arrays - One is an array of elements that filtered through or passed the 
+ * test, and the other is an array of elements that are rejected or did not pass
+ * the test. 
  * 
  * 
  * Usage:
@@ -293,13 +284,13 @@ module.exports.partition = partition;
 
 
 
-/** map: This function creates a new array by calling a transformation function on
+/** map: This function creates a new array by calling a callback function on
  * each of the collection elements. This is a non-mutating method. It is used, 
  * generally, to iterate over an array and applying a callback function on 
  * every array element.
  * @param {Array}collection: The collection to iterate over and map.
- * @param {function}test: The transformation function that runs on every element
- * of the given collection. It takes three parameters - value, index, and array.
+ * @param {function}test: The callback function that runs on every element
+ * of the given collection. It takes three arguments - value, index, and array.
  * @return {Array}result1: This is a new array of elements that are the results 
  * of the callback function.
  * 
@@ -384,7 +375,7 @@ module.exports.every = every;
  * the some() function is to be applied), index(the index of the current 
  * element) and element( the current element being processed by the function.
  * @param {array}collection: The array on which the some() function was called.
- * @return {Boolean}: This function returns true even if only one of the 
+ * @return {Boolean}: This function returns true if atleast one of the 
  * elements of the array satisfies the condition (but will not check the 
  * remaining elements) implemented by the test function. It returns false if
  * no element of the array satisfies the condition of the callback function.
